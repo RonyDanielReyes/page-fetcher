@@ -1,4 +1,4 @@
-const https = require('https');
+const http = require('http');
 const fs = require('fs');
 
 const url = process.argv[2];
@@ -9,7 +9,7 @@ if (!url || !filePath) {
   process.exit(1);
 }
 
-https.get(url, (response) => {
+http.get(url, (response) => {
   let data = '';
 
   response.on('data', (chunk) => {
